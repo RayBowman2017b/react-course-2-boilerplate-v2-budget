@@ -1,0 +1,61 @@
+
+/*
+
+_header.scss
+
+K:\A01_Udemy\C023_Complete_React_Web_Dev\Sections\a_Boilerplates\Boilerplate_v2\src\
+a68_styles\Components\_header.scss
+
+
+*/
+
+//  [RTMPL2_8|SFC_header.jsx::.primary-header css1;^B]
+
+.primary-header {
+    background-color: $dark-blue;
+}
+
+
+
+//  [RTMPL2_8|SFC_header.jsx::.primary-header__title css1;^B]
+
+.primary-header__title {
+    color: white;
+    text-decoration: none;
+    h1: {
+        margin: 0;
+    }
+}
+
+
+//  [RTMPL2_8|SFC_header.jsx::.primary-header__content css1;^B]
+
+.primary-header__content {
+
+    align-items: center;
+
+/*
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+display
+This defines a flex container; inline or block depending on the given value.
+ It enables a flex context for all its direct children.
+
+.container {
+  display: flex; /  * or inline-flex *  /
+}
+Note that CSS columns have no effect on a flex container.
+
+*/
+    display: flex;
+
+//    Distribute the space between the titrle and the "expensify" button.
+    justify-content: space-between;
+
+/*
+        top and bottom paddings are $s-size
+        right and left paddings are 0
+ */
+    padding: $s-size 0;
+}

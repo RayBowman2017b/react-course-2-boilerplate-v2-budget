@@ -1,0 +1,26 @@
+
+/*
+
+_loader.scss
+
+K:\A01_Udemy\C023_Complete_React_Web_Dev\Sections\a_Boilerplates\Boilerplate_v2\src\
+a68_styles\Components\_loader.scss
+
+*/
+
+//  [RTMPL2_8|loading_page.jsx::.loader css1;]
+
+.loader {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+}
+
+//  [RTMPL2_8|loading_page.jsx::.loader__image css1;]
+
+.loader__image {
+    height: 6rem;
+    width: 6rem;
+}

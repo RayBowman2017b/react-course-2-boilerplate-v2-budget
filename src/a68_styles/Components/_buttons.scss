@@ -1,0 +1,39 @@
+
+/*
+
+_buttons.scss
+
+K:\A01_Udemy\C023_Complete_React_Web_Dev\Sections\a_Boilerplates\Boilerplate_v2\src\
+a68_styles\Components\_buttons.scss
+
+*/
+
+//  [RTMPL2_8|SFC_header.jsx::.login-button css1;^B]
+
+//  [RTMPL2_8|login_page.jsx::.login-button css2;^B]
+
+.login-button {
+    background-color: $std-blue;
+    border: none;
+    color: white;
+    font-size: $font-size-large;
+    font-weight: 300;
+    padding: $s-size;
+    display: inline-block;
+    text-decoration: none;
+    line-height: 1;
+}
+
+
+//  [RTMPL2_8|SFC_header.jsx::.button--link css1;^B]
+
+.button--link {
+    background: none;
+}
+
+
+.remove-button {
+    @extend .login-button;
+    background-color: $dark-grey;
+    color: red;
+}

@@ -1,0 +1,37 @@
+
+/*
+
+_inputs.scss
+
+K:\A01_Udemy\C023_Complete_React_Web_Dev\Sections\a_Boilerplates\Boilerplate_v2\src\
+a68_styles\Components\_inputs.scss
+
+*/
+
+//  S07251667|sec011a_L103_expense_list_filters.jsx::.text-input css1;
+
+//  S07251667|sec011a_L105_expense_form.jsx::.text-input css2a;
+//  S07251667|sec011a_L105_expense_form.jsx::.text-input css2b;
+
+.text-input {
+    border: 1px solid #cacccd;
+    height: 50px;
+    font-size: $font-size-large;
+    font-weight: 300;
+    padding: $s-size;
+}
+
+
+//  S07251667|sec011a_L103_expense_list_filters.jsx::.select css1;
+
+.select {
+    @extend .text-input;
+}
+
+
+//  S07251667|sec011a_L105_expense_form.jsx::.textarea css1;
+
+.textarea {
+    @extend .text-input;
+    height: 10rem;
+}

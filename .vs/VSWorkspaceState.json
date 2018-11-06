@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\public",
+    "\\src",
+    "\\src\\sec009a_components",
+    "\\src\\sec009a_routers",
+    "\\src\\sec011a_L099_actions",
+    "\\src\\sec011a_L099_reducers",
+    "\\src\\sec011a_L099_store",
+    "\\src\\sec014a_firebase",
+    "\\src\\styles"
+  ],
+  "SelectedNode": "\\src\\sec014a_firebase\\firebase.js",
+  "PreviewInSolutionExplorer": false
+}

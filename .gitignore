@@ -1,0 +1,16 @@
+//  .gitignore
+
+node_modules/
+dist/
+public/bundle.js
+public/bundle.js.map
+public/styles.css
+public/styles.css.map
+
+a64_firebase/firebase_TEST.js
+
+.env.development
+.env.test
+
+z64_private/
+

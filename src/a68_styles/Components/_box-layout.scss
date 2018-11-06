@@ -1,0 +1,53 @@
+
+/*
+
+_box-layout.scss
+
+K:\A01_Udemy\C023_Complete_React_Web_Dev\Sections\a_Boilerplates\Boilerplate_v2\src\
+a68_styles\Components\_box-layout.scss
+
+*/
+
+
+//  [RTMPL2_8|login_page.jsx::.box-layout css1;^B]
+
+.box-layout {
+    /* Flexbox  */
+    align-items: center;
+
+    display: flex;
+    background: url('/images/bg.jpg');
+    background-size: cover;
+
+    /*   */
+    /* Set the image to 100% of the vh --- viewport height. */
+    height: 100vh;
+
+    /* Flexbox  */
+    justify-content: center;
+
+    /* Set the image to 100% of the vw --- viewport width. */
+    width: 100vw;
+}
+
+
+//  [RTMPL2_8|login_page.jsx::.box-layout__box css1;^B]
+
+.box-layout__box {
+    /* fade-out : color, opacity percentage  (1 = completely) */
+    /* background: fade-out(white, .15);  */
+    background: fade-out(white, .33);
+    border-radius: 3px;
+    padding: $l-size $m-size;
+    text-align: center;
+    width: 25rem;
+}
+
+
+//  [RTMPL2_8|login_page.jsx::.box-layout__title css1;^B]
+
+.box-layout__title {
+    margin: 0 0 $m-size 0;
+    line-height: 1;
+}
+

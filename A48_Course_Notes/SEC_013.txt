@@ -1,0 +1,325 @@
+
+
+SEC_013.txt
+
+=======================================================================================
+
+L-131
+
+git init --- Create a new git repo
+git status --- View the changes to your project code
+git add --- Add files to staging area
+git add .
+git commit -m "xxx" --- Creates a new commit with files from staging area
+git commit -m "Initial commit"
+git commit -m "commit 02"
+git log --- View recent commits
+
+
+ git add A01_Course_Notes/VSXMLrcov.bat
+
+//  Remove code to create test data
+
+if (false)
+{
+
+.....................
+
+git commit -m "Remove dummy expense data"
+
+
+=======================================================================================
+
+L-132
+
+
+https://github.com/RayBowman2017b/react-course-2-expensify-app
+
+Must set up a secure way to communicate with the github server
+ --- SSH (secure shell)
+
+    *** SHIFT+INSERT to copy-paste commands into git bash
+
+USE git bash
+> ls -a ~/.ssh
+
+
+search:
+ connecting to github with ssh
+ https://help.github.com/articles/connecting-to-github-with-ssh/
+ https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+
+
+https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
+
+USE git bash
+> ssh-keygen -t rsa -b 4096 -C "raybowman2017b@gmail.com"
+
+    -t --- specify the type to create (using rsa)
+    -b --- specify the number of bits (4096)
+    -C --- specify the associated account email address
+
+......................
+
+Sys_2016_07_25@Comp20160726 MINGW64 ~
+$ ssh-keygen -t rsa -b 4096 -C "raybowman2017b@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Sys_2016_07_25/.ssh/id_rsa):
+Created directory '/c/Users/Sys_2016_07_25/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Sys_2016_07_25/.ssh/id_rsa.
+Your public key has been saved in /c/Users/Sys_2016_07_25/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:5x2nm3LOREULntrMNDL8xWKo0okIjBDEtY8qam6WBjI raybowman2017b@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|=o..        . .  |
+|.+  .    . o = . |
+|. o.      = B =  |
+|   .o. o o @ =   |
+|   ...o S o B .  |
+|E .    . o o +   |
+|+o.       . +    |
+|o*        .o.o   |
+|B.         +=    |
++----[SHA256]-----+
+
+Sys_2016_07_25@Comp20160726 MINGW64 ~
+$ ls -a ~/.ssh
+./  ../  id_rsa  id_rsa.pub
+
+Sys_2016_07_25@Comp20160726 MINGW64 ~
+
+.......................
+
+
+id_rsa --- private key file
+id_rsa.pub --- public key file
+
+
+ssh agent --- make sure that it is running
+
+USE git bash
+> eval "$(ssh-agent -s)"
+
+.......................
+Sys_2016_07_25@Comp20160726 MINGW64 ~
+$ eval "$(ssh-agent -s)"
+Agent pid 13736
+
+Sys_2016_07_25@Comp20160726 MINGW64 ~
+.......................
+
+
+add the new key
+    --- provide the path to the private key file
+
+USE git bash
+> ssh-add  ~/.ssh/id_rsa
+
+.......................
+Sys_2016_07_25@Comp20160726 MINGW64 ~
+$ ssh-add  ~/.ssh/id_rsa
+Identity added: /c/Users/Sys_2016_07_25/.ssh/id_rsa (/c/Users/Sys_2016_07_25/.ssh/id_rsa)
+
+Sys_2016_07_25@Comp20160726 MINGW64 ~
+.......................
+
+Take the contents of the id_rsa.pub file and copy it to the clipboard
+
+https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
+
+USE git bash
+> clip < ~/.ssh/id_rsa.pub
+
+Copy the PUBLIC key to the clipboard, go to
+   profile > settings > SSH and GPG keys ...
+
+https://github.com/
+https://github.com/settings/profile
+https://github.com/settings/keys
+
+Give a meaningful title, then paste the key into the window.
+
+
+Run a test command
+   make a very basic connection to the gethub servers
+
+USE git bash
+> ssh -T git@github.com
+
+.......................
+Sys_2016_07_25@Comp20160726 MINGW64 ~
+$ ssh -T git@github.com
+The authenticity of host 'github.com (192.30.253.113)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.253.113' (RSA) to the list of known hosts.
+Hi RayBowman2017b! You've successfully authenticated, but GitHub does not provide shell access.
+
+Sys_2016_07_25@Comp20160726 MINGW64 ~
+.......................
+
+
+PUSH the code to github
+
+go to repository page
+https://github.com/RayBowman2017b?tab=repositories
+https://github.com/RayBowman2017b/react-course-2-expensify-app
+
+COPY SSH url
+git@github.com:RayBowman2017b/react-course-2-expensify-app.git
+
+RUN a command from git to let git know where our remote code should be
+
+WINDOWS COMMAND PROMPT
+> git remote add origin git@github.com:RayBowman2017b/react-course-2-expensify-app.git
+
+> git remote
+> git remote -v
+
+
+PUSH the code up
+
+> git push -u origin master
+
+    -u --- creates the association between local code and the upstream repository
+
+.......................
+K:\A01_Udemy\C023_Complete_React_Web_Dev\Sections\a01_final_projects\proj_02\Budget-app>git push -u origin master
+Warning: Permanently added the RSA host key for IP address '192.30.253.112' to the list of known hosts.
+Counting objects: 145, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (138/138), done.
+Writing objects: 100% (145/145), 587.68 KiB | 1.18 MiB/s, done.
+Total 145 (delta 37), reused 0 (delta 0)
+remote: Resolving deltas: 100% (37/37), done.
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/RayBowman2017b/react-course-2-expensify-app/pull/new/master
+remote:
+To github.com:RayBowman2017b/react-course-2-expensify-app.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+K:\A01_Udemy\C023_Complete_React_Web_Dev\Sections\a01_final_projects\proj_02\Budget-app>
+.......................
+
+
+
+=======================================================================================
+
+L-133
+
+setting up webpack for production
+
+open package.json
+
+"build" : "webpack"
+
+command
+> yarn run build
+ME:
+> yarn run build_webpack
+
+OR > yarn run webpack
+
+    *** The objective is to try to get as much stuff out of bundle.js into other files
+        that can optionally load
+
+webpack.js.org
+
+DOCUMENTATION > GUIDES
+
+https://webpack.js.org/guides/
+
+OPEN Production
+
+
+open package.json
+change:
+"build" : "webpack"
+TO:
+"build:dev" : "webpack"
+"build:prod" : "webpack"
+
+
+.......................
+
+Hash: bcc72b255a9ef2ef21e1
+Version: webpack 4.16.1
+Time: 29469ms
+Built at: 2018-09-19 20:47:04
+    Asset     Size  Chunks                    Chunk Names
+bundle.js  3.9 MiB       0  [emitted]  [big]  main
+Entrypoint main [big] = bundle.js
+ [28] ./node_modules/react-redux/es/index.js + 23 modules 43 KiB {0} [built]
+      |    24 modules
+ [38] ./a01_final_projects/proj_02/Budget-app/src/sec011a_L099_actions/sec011a_L099_ACTN_expenses.jsx 3.92 KiB {0} [built]
+[231] ./a01_final_projects/proj_02/Budget-app/src/sec011a_L099_selectors/sec011a_L099_SLCT_expenses.jsx 2.94 KiB {0} [built]
+[238] ./a01_final_projects/proj_02/Budget-app/src/sec012a_app.jsx 4.79 KiB {0} [built]
+[249] ./a01_final_projects/proj_02/Budget-app/src/sec009a_routers/sec009a_app_router.jsx 4.5 KiB {0} [built]
+[250] ./a01_final_projects/proj_02/Budget-app/src/sec009a_components/sec009a_CLS_add_expense_page.jsx 7.43 KiB {0} [built]
+[306] ./a01_final_projects/proj_02/Budget-app/src/sec009a_components/sec009a_CLS_edit_expense_page.jsx 10.2 KiB {0} [built]
+[307] ./a01_final_projects/proj_02/Budget-app/src/sec009a_components/sec009a_SFC_expense_dashboard_page.jsx 1.6 KiB {0} [built]
+[312] ./a01_final_projects/proj_02/Budget-app/src/sec009a_components/sec009a_SFC_header.jsx 1.59 KiB {0} [built]
+[313] ./a01_final_projects/proj_02/Budget-app/src/sec009a_components/sec009a_SFC_help_page.jsx 833 bytes {0} [built]
+[314] ./a01_final_projects/proj_02/Budget-app/src/sec009a_components/sec009a_SFC_not_found_page.jsx 1.18 KiB {0} [built]
+[315] ./a01_final_projects/proj_02/Budget-app/src/sec011a_L099_store/sec011a_L099_STR_configure_store.jsx 2.03 KiB {0} [built]
+[317] ./a01_final_projects/proj_02/Budget-app/src/sec011a_L099_reducers/sec011a_L099_RDCR_filters.jsx 4.87 KiB {0} [built]
+[321] ./a01_final_projects/proj_02/Budget-app/src/styles/styles.scss 1.26 KiB {0} [built]
+[322] ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./a01_final_projects/proj_02/Budget-app/src/styles/styles.scss 375 bytes {0} [built]
+    + 323 hidden modules
+
+WARNING in asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets:
+  bundle.js (3.9 MiB)
+
+WARNING in entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  main (3.9 MiB)
+      bundle.js
+
+
+WARNING in webpack performance recommendations:
+You can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.
+For more info visit https://webpack.js.org/guides/code-splitting/
+Done in 40.09s.
+
+K:\A01_Udemy\C023_Complete_React_Web_Dev\Sections>
+
+.......................
+
+
+https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
+
+
+=======================================================================================
+
+L-134
+
+
+=======================================================================================
+
+L-135
+
+
+=======================================================================================
+
+L-136
+
+
+
+.......................
+.......................
+
+.......................
+.......................
+
+
+------------------------------------------------
+------------------------------------------------
+------------------------------------------------
+------------------------------------------------

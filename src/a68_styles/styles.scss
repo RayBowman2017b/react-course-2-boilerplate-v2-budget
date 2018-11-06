@@ -1,0 +1,114 @@
+
+/*
+    styles.scss
+
+
+K:\A01_Udemy\C023_Complete_React_Web_Dev\
+Budget-app\src\styles\styles.scss
+
+
+K:\aaa_TransZ_DT201607\Ralph\Udemy\C023_Complete_React_Web_Dev\Sections\
+SEC_009_React_Router\proj-02\Budget-app\src\styles\styles.scss
+
+
+//  SEC_009 --- 76. Setting Up Budget App 6:54
+//  SEC_008 --- 64. Setting up Webpack with SCSS 13:16
+
+ */
+
+/*
+$brand-color: blue;
+
+*
+{
+    color: $brand-color;
+}
+
+*/
+
+@import './base/settings';
+
+@import './base/base';
+
+@import './Components/box-layout';
+
+
+@import './Components/buttons';
+@import './Components/header';
+@import './Components/content-container';
+
+@import './Components/page-header';
+
+@import './Components/input-group';
+
+@import './Components/inputs';
+
+@import './Components/form';
+
+@import './Components/visibility';
+@import './Components/list';
+
+@import './Components/loader';
+
+
+/*  ------------------------------------------------  *
+ *  ------------------------------------------------  *
+
+    This is for the indicision app
+
+@import './components_SEC008/modal';
+
+@import './components_SEC008/add-option';
+@import './components_SEC008/option';
+
+
+@import './components_SEC008/modal';
+
+@import './components_SEC008/add-option';
+@import './components_SEC008/option';
+
+@import './components_SEC008/widget';
+@import './components_SEC008/button';
+@import './components_SEC008/container';
+@import './components_SEC008/header';
+
+
+//  SEC_009 --- 76. Setting Up Budget App 6:54
+
+    OUT
+
+//  SEC_008 --- 71. Styling React-Modal 18:00
+
+@import './components_SEC008/modal';
+
+
+
+//  SEC_008 --- 70. Styling Option Item 16:40
+
+K:\aaa_TransZ_DT201607\Ralph\Udemy\C023_Complete_React_Web_Dev\Sections\
+SEC_008_Styling_React\proj_01\Indecision-app\src\styles\components\_add-option.scss
+
+*  /
+
+@import './components_SEC008/add-option';
+@import './components_SEC008/option';
+
+//  SEC_008 --- 69. Styling the Options List 14:13
+
+@import './components/widget';
+
+//  SEC_008 --- 68. Big Button & Options List 15:24
+
+@import './components/button';
+
+
+//  SEC_008 --- 67. Theming with Variables 14:18
+
+@import './components/container';
+
+//  SEC_008 --- 65. Architecture and Header Styles 14:48
+
+@import './components/header';
+
+ *  ------------------------------------------------  *
+ *  ------------------------------------------------  */

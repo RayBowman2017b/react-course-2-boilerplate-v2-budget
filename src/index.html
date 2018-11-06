@@ -1,0 +1,42 @@
+﻿<!-- index.html -->
+<!-- //  [RTMPL2_1|A01_DIrectory_01.txt::DRC2: index.html;^B]  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <!-- FROM : K:\A01_Udemy\webpack-boilerplate-master_01\src\index_02.html -->
+    <link rel="stylesheet" type="text/css" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <base href="/" />
+
+    <title>Boilerplate React App</title>
+
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+
+    <style>
+        .message_style { float: left; clear: both; }
+    </style>
+</head>
+
+<body>
+
+    <div id="main_app_root"></div>
+    <!--//  [RTMPL2_3|z32_main_app.jsx::getElementById('main_app_root'); ref1;^B]-->
+    <!-- <div id="abc">This is just something to render.   --- type='text/jsx'</div> -->
+    <!--<div id="index_HTML" class="message_style">Index.html --- type='text/babel'</div>-->
+
+    <div id="sec010_app_01"></div>
+
+    <!-- [RTMPL2_1|A01_DIrectory_01.txt::script src="/bundle.js" drc1;^B] -->
+    <!-- FROM : K:\A01_Udemy\webpack-boilerplate-master_01\src\index_02.html -->
+    <script type="text/babel" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>">
+    </script>
+    <!-- <script type="text/jsx" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script> -->
+    <!-- <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script> -->
+
+</body>
+</html>
